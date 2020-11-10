@@ -8,10 +8,12 @@ _prepare:
 	@mkdir -p bin
 
 _build_x86:
-	GOOS=linux GOARCH=386 go build -o bin/helloworld_x86 ./cmd/helloworld/
+	GOOS=linux GOARCH=386 go build -o bin/helloworld_linux_x86 ./cmd/helloworld/
+	GOOS=windows GOARCH=386 go build -o bin/helloworld_windows_x86.exe ./cmd/helloworld/
 
 _build_x64:
-	GOOS=linux GOARCH=amd64 go build -o bin/helloworld_x64 ./cmd/helloworld/
+	GOOS=linux GOARCH=amd64 go build -o bin/helloworld_linux_x64 ./cmd/helloworld/
+	GOOS=windows GOARCH=amd64 go build -o bin/helloworld_windows_x64.exe ./cmd/helloworld/
 
 _display:
 	@echo ''

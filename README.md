@@ -64,9 +64,13 @@ GOOSとGOARCHの組み合わせを指定することで各環境向けのビル�
 
 ```sh
 $ make
-GOOS=linux GOARCH=386 go build -o bin/helloworld_x86 ./cmd/helloworld/
-GOOS=linux GOARCH=amd64 go build -o bin/helloworld_x64 ./cmd/helloworld/
+GOOS=linux GOARCH=386 go build -o bin/helloworld_linux_x86 ./cmd/helloworld/
+GOOS=windows GOARCH=386 go build -o bin/helloworld_windows_x86.exe ./cmd/helloworld/
+GOOS=linux GOARCH=amd64 go build -o bin/helloworld_linux_x64 ./cmd/helloworld/
+GOOS=windows GOARCH=amd64 go build -o bin/helloworld_windows_x64.exe ./cmd/helloworld/
 
-helloworld_x64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
-helloworld_x86: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV)
+helloworld_linux_x64:       ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
+helloworld_linux_x86:       ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV)
+helloworld_windows_x64.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows
+helloworld_windows_x86.exe: PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows
 ```
