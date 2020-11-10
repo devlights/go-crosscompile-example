@@ -63,6 +63,22 @@ GOOSとGOARCHの組み合わせを指定することで各環境向けのビル�
 ## 実行サンプル
 
 ```sh
+$ cat /etc/os-release 
+NAME="Ubuntu"
+VERSION="20.04 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu Focal Fossa (development branch)"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
+```
+
+```sh
 $ make
 GOOS=linux GOARCH=386 go build -o bin/helloworld_linux_x86 ./cmd/helloworld/
 GOOS=windows GOARCH=386 go build -o bin/helloworld_windows_x86.exe ./cmd/helloworld/
